@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Projet : Santé des Femmes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #1D3557;
+            background-color: #FFFFFF;
+        }
+
+        header {
+            background-color: #1D3557;
+            color: #F1FAEE;
+            padding: 1rem 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            background-color: #1D3557;
+        }
+
+        .navbar .menu {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar .menu li {
+            display: inline;
+        }
+
+        .navbar .menu a {
+            text-decoration: none;
+            color: #F1FAEE;
+        }
+
+        /* Styles du carrousel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Largeur max du carrousel */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto; /* Pour garder l'aspect des images */
+            max-width: 600px; /* Largeur max des images */
+            border-radius: 10px;
+            object-fit: cover; /* Permet de remplir le cadre sans déformer l'image */
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #E63946;
+            margin-bottom: 1rem;
+        }
+
+        .results-section {
+            margin-bottom: 2rem;
+        }
+
+        .results-section h2 {
+            color: #457B9D;
+            margin-top: 1.5rem;
+        }
+
+        .results-section ul {
+            margin-left: 2rem;
+            list-style: disc;
+        }
+
+        .results-section p {
+            margin-bottom: 1rem;
+        }
+
+        blockquote {
+            background-color: #F1FAEE;
+            color: #457B9D;
+            padding: 1rem;
+            border-left: 4px solid #E63946;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#" style="color: #F1FAEE; font-size: 1.5rem; font-weight: bold;">ABINAYA</a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="project-details">
+        <h1>Projet : Carrousel Instagram sur la santé des femmes</h1>
+
+        <div class="results-section">
+            <h2>Introduction</h2>
+            <p>Dans le cadre de notre projet, nous avons choisi de travailler sur le thème de la santé des femmes. Ce sujet est crucial pour sensibiliser aux défis spécifiques et souvent sous-estimés liés à la santé féminine. Cela inclut :</p>
+            <ul>
+                <li>Les inégalités d'accès aux soins.</li>
+                <li>Les maladies spécifiques aux femmes (endométriose, cancer du sein, etc.).</li>
+                <li>La sensibilisation à la santé mentale et physique.</li>
+            </ul>
+        </div>
+
+        <div class="results-section">
+            <h2>Réalisation du Carrousel Instagram</h2>
+            <p>Voici la page dédiée à la réalisation d'un carrousel Instagram sur la santé des femmes, qui met en lumière différents aspects importants du sujet :</p>
+            <ul>
+                <li>Statistiques sur la santé des femmes.</li>
+                <li>Maladies spécifiques aux femmes.</li>
+            </ul>
+    
+            <!-- Carrousel -->
+            <div class="carousel-container">
+                <div class="carousel-images">
+                    <!-- Remplace les images par tes propres images -->
+                    <img src="images/carousel.jpg" alt="Image 1">
+                    <img src="images/carousel2.jpg" alt="Image 2">
+                    <img src="images/carousel3.jpg" alt="Image 3">
+                    <img src="images/carousel4.jpg" alt="Image 4">
+                    <img src="images/carousel5.jpg" alt="Image 5">
+                    <img src="images/carousel6.jpg" alt="Image 6">
+                    <img src="images/carousel7.jpg" alt="Image 7">
+                    <img src="images/carousel8.jpg" alt="Image 8">
+                    <img src="images/carousel9.jpg" alt="Image 9">
+                    <img src="images/carousel10.jpg" alt="Image 10">
+                </div>
+    
+                <!-- Contrôles du carrousel -->
+                <div class="carousel-controls">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <h2>Objectifs du projet</h2>
+            <ul>
+                <li>Sensibiliser à l'importance de la santé des femmes.</li>
+                <li>Encourager la discussion sur des sujets parfois tabous.</li>
+                <li>Fournir des ressources claires et fiables au public.</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        // Carrousel JavaScript
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-images img');
+        const totalImages = images.length;
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+    
+        function updateCarousel() {
+            const offset = -currentIndex * 100;  // Décalage basé sur l'index
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+    
+        prevButton.addEventListener('click', function() {
+            currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+            updateCarousel();
+        });
+    
+        nextButton.addEventListener('click', function() {
+            currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+    </script>
+
+</body>
+</html>
